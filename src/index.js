@@ -2,19 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+
+// 게임판 안에 작은 상자
 class Square extends React.Component {
     render() {
         return (
-            <button className="square">
-                {/* TODO */}
+            <button className="square" onClick={()=> {alert(this.props.value)}}>
+                {this.props.value}
             </button>
         );
     }
 }
 
+
+// 게임판에 해당 최상위
 class Board extends React.Component {
     renderSquare(i) {
-        return <Square />;
+        return <Square value={i}/>;
     }
 
     render() {
